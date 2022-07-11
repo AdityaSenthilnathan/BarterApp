@@ -10,7 +10,7 @@ import { AppDrawerNavigator } from './components/AppDrawerNavigator';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import SettingScreen from './screens/SettingScreen';
 
-//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 github token
+//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 github personel access token
 export default function App() {
   return (
     <AppContainer></AppContainer>
