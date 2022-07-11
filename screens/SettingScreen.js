@@ -27,37 +27,37 @@ export default class SettingScreen extends Component{
 
   getUserDetails=()=>{
     var email = firebase.auth().currentUser.email;
-    db.collection('User').where('email_id','==',email).get()
+    db.collection('User').where('Email','==',email).get()
     .then(snapshot => {
       snapshot.forEach(doc => {
       var data = doc.data()
         this.setState({
-          emailId   : data.email_id,
-          firstName : data.first_name,
-          lastName  : data.last_name,
-          address   : data.address,
-          contact   : data.contact,
+          emailId   : data.Email,
+          firstName : data.FirstName,
+          lastName  : data.LastName,
+          address   : data.Address,
+          contact   : data.Contact,
           docId     : doc.id
         })
       });
     })
+   
   }
 
   updateUserDetails=()=>{
     db.collection('User').doc(this.state.docId)
     .update({
-      "first_name": this.state.firstName,
-      "last_name" : this.state.lastName,
-      "address"   : this.state.address,
-      "contact"   : this.state.contact,
+      FirstName: this.state.firstName,
+      LastName: this.state.lastName,
+      Address: this.state.address,
+      Contact: this.state.contact,
     })
-
-alert("Profile Updated Successfully")
-
+    alert("Profile Updated Successfully")
   }
 
   componentDidMount(){
     this.getUserDetails()
+
   }
 
 
