@@ -83,10 +83,10 @@ export default class PostScreen extends React.Component {
           <MyHeader navigation={this.props.navigation} title="Post" />
 
 
-          <View style={{ flex: 1 }}>
+          <View style={styles.container}>
 
-            <TextInput styles={styles.input} value={this.state.Name} placeholder="Name of your item" onChangeText={(text) => { this.setState({ Name: text }) }}></TextInput>
-            <TextInput styles={styles.input} value={this.state.Description} placeholder="Description of your item" onChangeText={(text) => { this.setState({ Description: text }) }}></TextInput>
+            <TextInput style={styles.input} value={this.state.Name} placeholder="Name of your item" onChangeText={(text) => { this.setState({ Name: text }) }}></TextInput>
+            <TextInput style={styles.input2} value={this.state.Description} placeholder="Description of your item" onChangeText={(text) => { this.setState({ Description: text }) }}></TextInput>
             <TouchableOpacity style={styles.button} onPress={() => { this.AddBarters(this.state.Name, this.state.Description) }}><Text>Add Item</Text></TouchableOpacity>
 
 
@@ -111,17 +111,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   input: {
-    backgroundColor: '#d19',
+    height: 40,
+    width:300,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 2,
-    borderColor: '#000',
-    margin: 2
 
+  },
+  input2: {
+    height: 100,
+    width:300,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
 
   },
   button: {
     margin: 40,
+    width:300,
     backgroundColor: '#d11',
     alignItems: 'center',
     justifyContent: 'center',
